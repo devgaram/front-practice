@@ -1,0 +1,1 @@
+export { default as useFetchAPI, getQueryString } from './useFetchAPI';
