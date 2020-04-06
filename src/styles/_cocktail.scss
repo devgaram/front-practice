@@ -13,7 +13,11 @@
     position: relative;
     img.photo {      
       object-fit: cover;
-      box-sizing: border-box;      
+      box-sizing: border-box;
+
+      &.lazy {
+        filter: blur(2px);
+      }
     }
     div.category {
       position: absolute;

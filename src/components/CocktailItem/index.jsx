@@ -1,5 +1,5 @@
 import React from "react";
-
+import IntersectionObserver from "../Image/IntersectionObserver";
 export default function CocktailItem({ drink }) {
   const { 
     idDrink,
@@ -14,12 +14,8 @@ export default function CocktailItem({ drink }) {
   return (
     <article className="cockTailItem">
       <div className="meta">
-        <img
-          className="photo"
-          alt=""
-          src={`${strDrinkThumb}?bl-30,q-50`}
-        />
-        <div class="category">{strCategory}</div>
+        <IntersectionObserver imageUrl={strDrinkThumb} imageAlt={strDrink} className="photo" />
+        <div className="category">{strCategory}</div>
       </div>
       <div className="description">
         <ul>
@@ -27,14 +23,14 @@ export default function CocktailItem({ drink }) {
             <h2>{strDrink}</h2>            
           </li>
           <li>
-            <span class="tag primary">#{strAlcoholic}</span>
-            <span class="tag primary">#{strGlass}</span>
+            <span className="tag primary">#{strAlcoholic}</span>
+            <span className="tag primary">#{strGlass}</span>
           </li>
           <li>
-            <div class="tags">{strTags && strTags.split(",").map((tag, index) => <span class="tag purple" key={`${strDrink}-${tag}`}>#{tag}</span>)}</div>
+            <div className="tags">{strTags && strTags.split(",").map((tag, index) => <span className="tag purple" key={`${strDrink}-${tag}`}>#{tag}</span>)}</div>
           </li>
           <li>
-            <p class="instruction">{strInstructions}</p>
+            <p className="instruction">{strInstructions}</p>
           </li>
         </ul>
       </div>
